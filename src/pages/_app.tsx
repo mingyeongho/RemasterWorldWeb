@@ -1,7 +1,9 @@
 import Header from "../components/Organisms/Header/Header";
-import { GlobalStyle } from "@/styles/GlobalStyle";
+import { GlobalStyle } from "../styles/GlobalStyle";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { ApolloProvider } from "@apollo/client";
+import client from "../utils/apollo";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -31,8 +33,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <GlobalStyle />
-      <Header />
-      <Component {...pageProps} />
+      <ApolloProvider client={client}>
+        <Header />
+        <Component {...pageProps} />
+      </ApolloProvider>
     </>
   );
 }
