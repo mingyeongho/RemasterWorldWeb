@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-export const Navs = styled.nav`
+export const Form = styled.form`
   display: flex;
-  gap: 20px;
 `;

@@ -32,7 +32,7 @@ const Navs = () => {
   return (
     <S.Navs>
       {NavContents.map((content, idx) => (
-        <Link key={idx} href={`?continent=${content.label}`}>
+        <Link key={idx} href={`/?continent=${content.label}`}>
           {content.label}
         </Link>
       ))}
