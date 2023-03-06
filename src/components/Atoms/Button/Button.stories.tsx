@@ -16,5 +16,15 @@ type Story = StoryObj<typeof Button>;
 export const Primary: Story = {
   args: {
     label: "Button",
+    onClick: (e: React.MouseEvent) => {},
+  },
+};
+
+export const Inherit: Story = {
+  args: {
+    label: "Inherit",
+    onClick: (e: React.MouseEvent) => {},
+
+    backgroundColor: "inherit",
   },
 };

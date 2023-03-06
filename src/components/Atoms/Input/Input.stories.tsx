@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ChangeEvent } from "react";
 
 import Input from "./Input";
 
@@ -17,7 +16,5 @@ type Story = StoryObj<typeof Input>;
 export const Primary: Story = {
   args: {
     placeholder: "Placeholder (...)",
-    value: "",
-    onChange: (e: ChangeEvent<HTMLInputElement>) => {},
   },
 };
