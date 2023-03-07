@@ -15,7 +15,7 @@ export default function IndexPage() {
 
   const onSearch = (e: FormEvent) => {
     e.preventDefault();
-    router.push(`/${input}`);
+    router.push(`/${input.toUpperCase()}`);
   };
 
   if (loading) {

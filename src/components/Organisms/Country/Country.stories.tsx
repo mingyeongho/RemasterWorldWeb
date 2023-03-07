@@ -1,3 +1,4 @@
+import { setContinentDummyCountry } from "../../../utils/dummyData";
 import type { Meta, StoryObj } from "@storybook/react";
 import Country from "./Country";
 
@@ -13,154 +14,42 @@ type Story = StoryObj<typeof Country>;
 
 export const Asia: Story = {
   args: {
-    country: {
-      code: "KR",
-      emoji: "🇰🇷",
-      name: "Korea",
-      languages: [
-        {
-          code: "KR",
-          name: "Korean",
-          native: "한국어",
-          rtl: false,
-        },
-      ],
-      continent: {
-        code: "AS",
-        name: "Asia",
-      },
-    },
+    country: setContinentDummyCountry("AS"),
   },
 };
 
 export const Europe: Story = {
   args: {
-    country: {
-      code: "KR",
-      emoji: "🇰🇷",
-      name: "Korea",
-      languages: [
-        {
-          code: "KR",
-          name: "Korean",
-          native: "한국어",
-          rtl: false,
-        },
-      ],
-      continent: {
-        code: "EU",
-        name: "Europe",
-      },
-    },
+    country: setContinentDummyCountry("EU"),
   },
 };
 
 export const NorthAmerica: Story = {
   args: {
-    country: {
-      code: "KR",
-      emoji: "🇰🇷",
-      name: "Korea",
-      languages: [
-        {
-          code: "KR",
-          name: "Korean",
-          native: "한국어",
-          rtl: false,
-        },
-      ],
-      continent: {
-        code: "NA",
-        name: "NorthAmerica",
-      },
-    },
+    country: setContinentDummyCountry("NA"),
   },
 };
 
 export const SouthAmerica: Story = {
   args: {
-    country: {
-      code: "KR",
-      emoji: "🇰🇷",
-      name: "Korea",
-      languages: [
-        {
-          code: "KR",
-          name: "Korean",
-          native: "한국어",
-          rtl: false,
-        },
-      ],
-      continent: {
-        code: "SA",
-        name: "SouthAmerica",
-      },
-    },
+    country: setContinentDummyCountry("SA"),
   },
 };
 
 export const Oceania: Story = {
   args: {
-    country: {
-      code: "KR",
-      emoji: "🇰🇷",
-      name: "Korea",
-      languages: [
-        {
-          code: "KR",
-          name: "Korean",
-          native: "한국어",
-          rtl: false,
-        },
-      ],
-      continent: {
-        code: "OC",
-        name: "Oceania",
-      },
-    },
+    country: setContinentDummyCountry("OC"),
   },
 };
 
 export const Africa: Story = {
   args: {
-    country: {
-      code: "KR",
-      emoji: "🇰🇷",
-      name: "Korea",
-      languages: [
-        {
-          code: "KR",
-          name: "Korean",
-          native: "한국어",
-          rtl: false,
-        },
-      ],
-      continent: {
-        code: "AF",
-        name: "Africa",
-      },
-    },
+    country: setContinentDummyCountry("AF"),
   },
 };
 
 export const Antarctica: Story = {
   args: {
-    country: {
-      code: "KR",
-      emoji: "🇰🇷",
-      name: "Korea",
-      languages: [
-        {
-          code: "KR",
-          name: "Korean",
-          native: "한국어",
-          rtl: false,
-        },
-      ],
-      continent: {
-        code: "AN",
-        name: "Antarctica",
-      },
-    },
+    country: setContinentDummyCountry("AN"),
   },
 };

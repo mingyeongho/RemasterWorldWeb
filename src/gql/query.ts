@@ -19,3 +19,31 @@ export const getAllSimpleCountries = gql`
     }
   }
 `;
+
+export const getCountry = ({ name }: { name: string }) => gql`
+  {
+    country(code: "${name}") {
+      code
+      name 
+      native
+      phone 
+      continent {
+        code 
+        name 
+      }
+      capital 
+      currency 
+      languages {
+        code 
+        name 
+        native 
+        rtl
+      }
+      emoji 
+      states {
+        code 
+        name 
+      }
+    }
+  }
+`;
