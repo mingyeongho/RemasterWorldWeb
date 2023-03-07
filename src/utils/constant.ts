@@ -1,5 +1,8 @@
 export const TabMenus = [
   {
+    label: "ALL",
+  },
+  {
     label: "AS",
   },
   {
@@ -19,5 +22,8 @@ export const TabMenus = [
   },
   {
     label: "AN",
+  },
+  {
+    label: "Like",
   },
 ];

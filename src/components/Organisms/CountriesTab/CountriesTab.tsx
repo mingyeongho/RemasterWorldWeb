@@ -5,12 +5,13 @@ import * as S from "./CountriesTab.style";
 
 interface CountriesTabProps {
   countries: SimpleCountryDTO[];
+  qs: string | string[] | undefined;
 }
 
-const CountriesTab = ({ countries }: CountriesTabProps) => {
+const CountriesTab = ({ countries, qs }: CountriesTabProps) => {
   return (
     <S.CountriesTab>
-      <Tab />
+      <Tab qs={qs} />
       <S.CountriesWrapper>
         <Countries countries={countries} />
       </S.CountriesWrapper>

@@ -2,6 +2,8 @@ export const Palette = {
   Accent: "#F4D58D",
   Accent_Dark: "#EDBA45",
   Accent_Light: "#F9EAC7",
+  White: "#F2F2F2",
+  Black: "#222222",
 };
 
 export const ContinentPalette = {
@@ -13,5 +15,5 @@ export const ContinentPalette = {
   OC: "#D8664F",
   EU: "#DC7CA6",
   AN: "#6D9DBE",
-  Like: "black",
+  Like: "#d04531",
 };

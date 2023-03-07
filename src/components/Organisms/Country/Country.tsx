@@ -10,7 +10,7 @@ interface CountryProps {
 const Country = ({ country }: CountryProps) => {
   const { continent, emoji, languages, name } = country;
   return (
-    <S.Country>
+    <S.Country borderColor={continent.code}>
       <CountryHead continent={continent} />
       <S.CountryBodyWrapper>
         <CountryBody emoji={emoji} name={name} languages={languages} />

@@ -6,19 +6,13 @@ import * as S from "./CountryHead.style";
 interface CountryHeadProps {
   continent: ContinentDTO;
   like?: string;
-
-  backgroundColor?: string;
 }
 
-const CountryHead = ({
-  continent,
-  like = "☆",
-  backgroundColor = Palette.Accent,
-}: CountryHeadProps) => {
+const CountryHead = ({ continent, like = "☆" }: CountryHeadProps) => {
   return (
-    <S.CountryHead backgroundColor={backgroundColor}>
-      <Span label={continent.name} />
-      <Span label={like} />
+    <S.CountryHead backgroundColor={continent.code}>
+      <Span label={continent.name} color={Palette.White} />
+      <Span label={like} color={Palette.White} />
     </S.CountryHead>
   );
 };

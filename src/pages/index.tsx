@@ -28,6 +28,7 @@ export default function IndexPage() {
       onChange={onChange}
       onSearch={onSearch}
       countries={data.countries}
+      qs={router.query.continent}
     />
   );
 }

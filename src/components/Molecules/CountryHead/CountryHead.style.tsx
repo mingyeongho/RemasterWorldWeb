@@ -1,3 +1,4 @@
+import { getContinentColor } from "../../../utils/function";
 import styled from "styled-components";
 
 interface CountryHeadProps {
@@ -10,5 +11,6 @@ export const CountryHead = styled.div<CountryHeadProps>`
   align-items: center;
   padding: 4px 8px;
 
-  background-color: ${({ backgroundColor }) => backgroundColor};
+  background-color: ${({ backgroundColor }) =>
+    getContinentColor({ continent: backgroundColor })};
 `;

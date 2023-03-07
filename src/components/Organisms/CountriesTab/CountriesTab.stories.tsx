@@ -12,5 +12,76 @@ export default meta;
 type Story = StoryObj<typeof CountriesTab>;
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    countries: [
+      {
+        code: "KR",
+        name: "Korea",
+        continent: {
+          code: "AS",
+          name: "Asia",
+        },
+        emoji: "🇰🇷",
+        languages: [
+          {
+            code: "KR",
+            name: "Korean",
+            native: "한국어",
+            rtl: false,
+          },
+        ],
+      },
+      {
+        code: "KR",
+        name: "Korea",
+        continent: {
+          code: "AS",
+          name: "Asia",
+        },
+        emoji: "🇰🇷",
+        languages: [
+          {
+            code: "KR",
+            name: "Korean",
+            native: "한국어",
+            rtl: false,
+          },
+        ],
+      },
+      {
+        code: "KR",
+        name: "Korea",
+        continent: {
+          code: "AS",
+          name: "Asia",
+        },
+        emoji: "🇰🇷",
+        languages: [
+          {
+            code: "KR",
+            name: "Korean",
+            native: "한국어",
+            rtl: false,
+          },
+        ],
+      },
+      {
+        code: "KR",
+        name: "Korea",
+        continent: {
+          code: "AS",
+          name: "Asia",
+        },
+        emoji: "🇰🇷",
+        languages: [
+          {
+            code: "KR",
+            name: "Korean",
+            native: "한국어",
+            rtl: false,
+          },
+        ],
+      },
+    ],
+  },
 };
