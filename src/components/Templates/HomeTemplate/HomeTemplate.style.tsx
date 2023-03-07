@@ -5,6 +5,7 @@ export const HomeTemplate = styled.main`
   height: 600px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
   background-color: white;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
