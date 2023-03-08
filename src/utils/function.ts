@@ -1,3 +1,4 @@
+import React from "react";
 import { ContinentPalette, Palette } from "../styles/Palette";
 
 export const getLinkHref = ({ label }: { label: string }) => {
@@ -93,4 +94,20 @@ export const isFocusTabMenu = ({
     return true;
   }
   return false;
+};
+
+export const onAddLikeCountries = (e: React.MouseEvent, code: string) => {
+  e.preventDefault();
+
+  const getLikeCountries = localStorage.getItem("likeCountries");
+
+  if (!getLikeCountries) {
+    localStorage.setItem("likeCountries", JSON.stringify([code]));
+    return;
+  }
+
+  const parseGetLikeCountries: string[] = JSON.parse(getLikeCountries);
+  const newLikeCountries = JSON.stringify(parseGetLikeCountries.concat(code));
+
+  localStorage.setItem("likeCountries", newLikeCountries);
 };

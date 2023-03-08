@@ -16,6 +16,7 @@ export const getAllSimpleCountries = gql`
         rtl
       }
       emoji
+      islike @client
     }
   }
 `;

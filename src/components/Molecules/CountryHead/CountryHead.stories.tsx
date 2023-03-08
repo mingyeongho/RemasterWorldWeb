@@ -11,8 +11,21 @@ const meta: Meta<typeof CountryHead> = {
 export default meta;
 type Story = StoryObj<typeof CountryHead>;
 
-export const Primary: Story = {
+export const Unlike: Story = {
   args: {
-    continent: "Continent",
+    continent: {
+      code: "AS",
+      name: "Asia",
+    },
+  },
+};
+
+export const Like: Story = {
+  args: {
+    continent: {
+      code: "AS",
+      name: "Asia",
+    },
+    isLike: true,
   },
 };

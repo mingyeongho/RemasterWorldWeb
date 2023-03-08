@@ -4,6 +4,11 @@ export interface SimpleCountryDTO {
   continent: ContinentDTO;
   languages: LanguageDTO[];
   emoji: string;
+  isLike: boolean;
+}
+
+export interface SimpleCountryLikeDTO extends SimpleCountryDTO {
+  like: boolean;
 }
 
 export interface CountryDTO extends SimpleCountryDTO {

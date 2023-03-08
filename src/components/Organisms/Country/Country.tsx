@@ -9,13 +9,13 @@ interface CountryProps {
 }
 
 const Country = ({ country }: CountryProps) => {
-  const { code, continent, emoji, languages, name } = country;
+  const { code, continent } = country;
   return (
     <S.Country borderColor={continent.code}>
       <Link href={`/${code}`}>
-        <CountryHead continent={continent} />
+        <CountryHead {...country} />
         <S.CountryBodyWrapper>
-          <CountryBody emoji={emoji} name={name} languages={languages} />
+          <CountryBody {...country} />
         </S.CountryBodyWrapper>
       </Link>
     </S.Country>

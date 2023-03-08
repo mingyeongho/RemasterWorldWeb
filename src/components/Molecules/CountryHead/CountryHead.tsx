@@ -2,17 +2,23 @@ import { ContinentDTO } from "../../../utils/interface";
 import { Palette } from "../../../styles/Palette";
 import Span from "../../Atoms/Span/Span";
 import * as S from "./CountryHead.style";
+import { onAddLikeCountries } from "../../../utils/function";
 
 interface CountryHeadProps {
+  code: string;
   continent: ContinentDTO;
-  like?: string;
+  isLike: boolean;
 }
 
-const CountryHead = ({ continent, like = "☆" }: CountryHeadProps) => {
+const CountryHead = ({ code, continent, isLike }: CountryHeadProps) => {
   return (
     <S.CountryHead backgroundColor={continent.code}>
       <Span label={continent.name} color={Palette.White} />
-      <Span label={like} color={Palette.White} />
+      <Span
+        label={isLike ? "★" : "☆"}
+        color={Palette.White}
+        onClick={(e: React.MouseEvent) => onAddLikeCountries(e, code)}
+      />
     </S.CountryHead>
   );
 };
