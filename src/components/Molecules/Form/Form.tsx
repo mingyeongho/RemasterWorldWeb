@@ -4,6 +4,7 @@ import Input from "../../Atoms/Input/Input";
 import * as S from "./Form.style";
 
 interface FormProps {
+  // logical props
   value: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   onSearch: (e: FormEvent) => void;

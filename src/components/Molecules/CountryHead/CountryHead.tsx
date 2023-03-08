@@ -16,9 +16,15 @@ interface CountryHeadProps {
   code: string;
 
   //
+  onRefetch: () => void;
 }
 
-const CountryHead = ({ code, continent, isLike }: CountryHeadProps) => {
+const CountryHead = ({
+  code,
+  continent,
+  isLike,
+  onRefetch,
+}: CountryHeadProps) => {
   return (
     <S.CountryHead backgroundColor={continent.code}>
       <Span label={continent.name} color={Palette.White} />
@@ -29,9 +35,10 @@ const CountryHead = ({ code, continent, isLike }: CountryHeadProps) => {
         border="none"
         padding={0}
         color={Palette.White}
-        onClick={(e: React.MouseEvent) =>
-          onToggleLikeCountries(e, code, isLike)
-        }
+        onClick={(e: React.MouseEvent) => {
+          onToggleLikeCountries(e, code, isLike);
+          onRefetch();
+        }}
       />
     </S.CountryHead>
   );

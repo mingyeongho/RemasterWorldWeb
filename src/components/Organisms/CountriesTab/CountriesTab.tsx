@@ -1,19 +1,20 @@
 import Tab from "../../Molecules/Tab/Tab";
-import { SimpleCountryDTO } from "../../../utils/interface";
+import { SimpleCountryLikeDTO } from "../../../utils/interface";
 import Countries from "../Countries/Countries";
 import * as S from "./CountriesTab.style";
 
 interface CountriesTabProps {
-  countries: SimpleCountryDTO[];
+  countries: SimpleCountryLikeDTO[];
   qs: string | string[] | undefined;
+  onRefetch: () => void;
 }
 
-const CountriesTab = ({ countries, qs }: CountriesTabProps) => {
+const CountriesTab = ({ countries, qs, onRefetch }: CountriesTabProps) => {
   return (
     <S.CountriesTab>
       <Tab qs={qs} />
       <S.CountriesWrapper>
-        <Countries countries={countries} />
+        <Countries countries={countries} onRefetch={onRefetch} />
       </S.CountriesWrapper>
     </S.CountriesTab>
   );

@@ -12,5 +12,11 @@ export default meta;
 type Story = StoryObj<typeof InfoAside>;
 
 export const Korea: Story = {
-  args: {},
+  args: {
+    name: "Korea",
+    code: "KR",
+    capital: "Seoul",
+    emoji: "🇰🇷",
+    native: "대한민국",
+  },
 };

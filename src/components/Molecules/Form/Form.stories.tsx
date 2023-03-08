@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { ChangeEvent, FormEvent } from "react";
 import Form from "./Form";
 
 const meta: Meta<typeof Form> = {
@@ -12,5 +13,9 @@ export default meta;
 type Story = StoryObj<typeof Form>;
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    value: "",
+    onChange: (e: ChangeEvent<HTMLInputElement>) => {},
+    onSearch: (e: FormEvent) => {},
+  },
 };

@@ -12,5 +12,21 @@ export default meta;
 type Story = StoryObj<typeof InfoContent>;
 
 export const Korea: Story = {
-  args: {},
+  args: {
+    continent: {
+      code: "AS",
+      name: "Asia",
+    },
+    currency: "KRW",
+    languages: [
+      {
+        code: "KR",
+        name: "Korean",
+        native: "한국어",
+        rtl: false,
+      },
+    ],
+    phone: "82",
+    states: [],
+  },
 };

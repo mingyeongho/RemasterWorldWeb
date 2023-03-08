@@ -1,4 +1,5 @@
-import React from "react";
+import { GET_ALL_COUNTRIES } from "@/gql/GET_ALL_COUNTRIES";
+import { GET_COUNTRIES_BY_CONTINENT } from "@/gql/GET_COUNTRIES_BY_CONTINENT";
 import { ContinentPalette, Palette } from "../styles/Palette";
 import client from "./apollo";
 
@@ -122,7 +123,6 @@ export const onToggleLikeCountries = (
     localStorage.setItem("likeCountries", newLikeCountries);
   } else {
     // add
-
     if (!getLikeCountries) {
       localStorage.setItem("likeCountries", JSON.stringify([code]));
       return;
@@ -134,5 +134,7 @@ export const onToggleLikeCountries = (
     localStorage.setItem("likeCountries", newLikeCountries);
   }
 
-  client.refetchQueries({ include: "all" });
+  client.refetchQueries({
+    include: [GET_ALL_COUNTRIES],
+  });
 };

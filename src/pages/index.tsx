@@ -1,15 +1,9 @@
 import { GET_ALL_COUNTRIES } from "@/gql/GET_ALL_COUNTRIES";
-import { GET_COUNTRIES_BY_CONTINENT } from "@/gql/GET_COUNTRIES_BY_CONTINENT";
-import {
-  getAllSimpleCountries,
-  getCountries,
-  getLikeCountries,
-} from "@/gql/query";
+import { getCountries, getLikeCountries } from "@/gql/query";
 import useForm from "@/hooks/useForm";
 import { SimpleCountryLikeDTO } from "@/utils/interface";
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { ChangeEvent, FormEvent, useState } from "react";
 import HomeTemplate from "../components/Templates/HomeTemplate/HomeTemplate";
 
 type GetData = {
@@ -37,7 +31,11 @@ export default function IndexPage() {
     }
   };
 
-  const { data, loading } = useQuery<GetData>(queryArg());
+  const { data, loading, refetch, client } = useQuery<GetData>(queryArg());
+
+  const onRefetch = () => {
+    refetch();
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -54,6 +52,7 @@ export default function IndexPage() {
       onSearch={onSearch}
       countries={data.countries}
       qs={router.query.continent}
+      onRefetch={onRefetch}
     />
   );
 }

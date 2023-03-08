@@ -1,16 +1,17 @@
-import { SimpleCountryDTO } from "@/utils/interface";
+import { SimpleCountryLikeDTO } from "@/utils/interface";
 import Country from "../Country/Country";
 import * as S from "./Countries.style";
 
 interface CountriesProps {
-  countries: SimpleCountryDTO[];
+  countries: SimpleCountryLikeDTO[];
+  onRefetch: () => void;
 }
 
-const Countries = ({ countries }: CountriesProps) => {
+const Countries = ({ countries, onRefetch }: CountriesProps) => {
   return (
     <S.Countries>
       {countries.map((country, idx) => (
-        <Country country={country} key={idx} />
+        <Country country={country} key={idx} onRefetch={onRefetch} />
       ))}
     </S.Countries>
   );

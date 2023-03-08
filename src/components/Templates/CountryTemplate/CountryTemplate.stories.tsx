@@ -1,3 +1,4 @@
+import { DummyCountryInfo } from "../../../utils/dummyData";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import CountryTemplate from "./CountryTemplate";
@@ -11,5 +12,7 @@ export default meta;
 type Story = StoryObj<typeof CountryTemplate>;
 
 export const Country: Story = {
-  args: {},
+  args: {
+    countryInfo: DummyCountryInfo,
+  },
 };

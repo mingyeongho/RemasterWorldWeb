@@ -6,6 +6,11 @@ interface AProps {
 }
 
 export const A = styled.div<AProps>`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   a {
     text-decoration: ${({ textDecoration }) => textDecoration};
     color: ${({ color }) => color};
