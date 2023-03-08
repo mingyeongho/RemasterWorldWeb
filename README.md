@@ -18,13 +18,6 @@
     <li>
         <a href='#structure'>폴더 구조</a>
     </li>
-    <li>
-        <a href='#agonize'>고민한 부분</a>
-    </li>
-    <li>
-        <a href='#improve'>개선사항</a>
-    </li>
-    
 </ol>
 
 <h2 id='overview'>Overview</h2>
