@@ -53,3 +53,9 @@ export const Antarctica: Story = {
     country: setContinentDummyCountry("AN"),
   },
 };
+
+export const LikeAsia: Story = {
+  args: {
+    country: { ...setContinentDummyCountry("AS"), isLike: true },
+  },
+};

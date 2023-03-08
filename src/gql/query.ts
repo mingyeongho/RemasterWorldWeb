@@ -44,6 +44,33 @@ export const getCountries = ({ continent }: { continent: string }) => gql`
   }
 `;
 
+export const getLikeCountries = ({
+  likeCountries,
+}: {
+  likeCountries: string[];
+}) => gql`
+  {
+    countries(filter: {
+      code: {
+        in: [${likeCountries.map((country) => `"${country}"`)}]
+      }
+    }) {
+      code
+      name
+      continent {
+        code
+        name
+      }
+      languages {
+        code
+        name
+      }
+      emoji
+      isLike @client
+    }
+  }
+`;
+
 export const getCountry = ({ name }: { name: string }) => gql`
   {
     country(code: "${name}") {

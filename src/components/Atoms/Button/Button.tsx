@@ -8,6 +8,7 @@ interface ButtonProps {
 
   padding?: number;
   backgroundColor?: string;
+  color?: string;
   borderRadius?: number;
   border?: string;
 }
@@ -19,6 +20,7 @@ const Button = ({
 
   padding = 6,
   backgroundColor = Palette.Accent_Dark,
+  color = Palette.Black,
   borderRadius = 10,
   border = "1px solid #ddd",
 }: ButtonProps) => {
@@ -28,6 +30,7 @@ const Button = ({
       onClick={onClick}
       padding={padding}
       backgroundColor={backgroundColor}
+      color={color}
       borderRadius={borderRadius}
       border={border}
     >

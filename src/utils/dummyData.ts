@@ -1,6 +1,12 @@
-import { CountryDTO, SimpleCountryDTO } from "./interface";
+import {
+  CountryDTO,
+  SimpleCountryDTO,
+  SimpleCountryLikeDTO,
+} from "./interface";
 
-export const setContinentDummyCountry = (continent: string) => {
+export const setContinentDummyCountry = (
+  continent: string
+): SimpleCountryLikeDTO => {
   return {
     code: "KR",
     name: "Korea",
@@ -17,6 +23,7 @@ export const setContinentDummyCountry = (continent: string) => {
         rtl: false,
       },
     ],
+    isLike: false,
   };
 };
 

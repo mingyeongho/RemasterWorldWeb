@@ -3,6 +3,7 @@ import { ChangeEvent, FormEvent } from "react";
 import Form from "../../Molecules/Form/Form";
 import * as S from "./HomeTemplate.style";
 import { SimpleCountryDTO } from "../../../utils/interface";
+import FloatingBox from "../../Atoms/FloatingBox/FloatingBox";
 
 interface HomeTemplateProps {
   value: string;
@@ -21,10 +22,10 @@ const HomeTemplate = ({
   countries,
 }: HomeTemplateProps) => {
   return (
-    <S.HomeTemplate>
+    <FloatingBox>
       <Form value={value} onChange={onChange} onSearch={onSearch} />
       <CountriesTab countries={countries} qs={qs} />
-    </S.HomeTemplate>
+    </FloatingBox>
   );
 };
 

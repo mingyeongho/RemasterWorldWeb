@@ -1,8 +1,6 @@
-import { GET_ALL_COUNTRIES } from "@/gql/GET_ALL_COUNTRIES";
-import { GET_COUNTRIES_BY_CONTINENT } from "@/gql/GET_COUNTRIES_BY_CONTINENT";
-import { ParsedUrlQuery } from "querystring";
 import React from "react";
 import { ContinentPalette, Palette } from "../styles/Palette";
+import client from "./apollo";
 
 export const getLinkHref = ({ label }: { label: string }) => {
   switch (label) {
@@ -21,7 +19,7 @@ export const getLinkHref = ({ label }: { label: string }) => {
     case "OC":
       return "/?continent=OC";
     case "Like":
-      return "/";
+      return "/?continent=Like";
     default:
       return "/";
   }
@@ -38,13 +36,15 @@ export const getContinentColor = ({ continent }: { continent: string }) => {
     case "NA":
       return `${ContinentPalette.NA}`;
     case "AF":
-      return `${ContinentPalette.SA}`;
+      return `${ContinentPalette.AF}`;
     case "AN":
       return `${ContinentPalette.AN}`;
     case "OC":
       return `${ContinentPalette.OC}`;
     case "ALL":
       return `${ContinentPalette.ALL}`;
+    case "Like":
+      return `${ContinentPalette.Like}`;
     default:
       return `${Palette.Accent}`;
   }
@@ -67,11 +67,13 @@ export const getTabBgColor = ({
       case "NA":
         return `${ContinentPalette.NA}`;
       case "AF":
-        return `${ContinentPalette.SA}`;
+        return `${ContinentPalette.AF}`;
       case "AN":
         return `${ContinentPalette.AN}`;
       case "OC":
         return `${ContinentPalette.OC}`;
+      case "Like":
+        return `${ContinentPalette.Like}`;
       default:
         return `${Palette.Accent}`;
     }
@@ -131,4 +133,6 @@ export const onToggleLikeCountries = (
 
     localStorage.setItem("likeCountries", newLikeCountries);
   }
+
+  client.refetchQueries({ include: "all" });
 };

@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { SimpleCountryDTO } from "../../../utils/interface";
+import { SimpleCountryLikeDTO } from "../../../utils/interface";
 import CountryBody from "../../Molecules/CountryBody/CountryBody";
 import CountryHead from "../../Molecules/CountryHead/CountryHead";
 import * as S from "./Country.style";
 
 interface CountryProps {
-  country: SimpleCountryDTO;
+  country: SimpleCountryLikeDTO;
 }
 
 const Country = ({ country }: CountryProps) => {
