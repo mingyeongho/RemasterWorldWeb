@@ -16,7 +16,30 @@ export const getAllSimpleCountries = gql`
         rtl
       }
       emoji
-      islike @client
+      isLike @client
+    }
+  }
+`;
+
+export const getCountries = ({ continent }: { continent: string }) => gql`
+  {
+    countries(filter: {
+        continent: {
+            eq: "${continent}"
+        }
+    }) {
+      code
+      name
+      continent {
+        code
+        name
+      }
+      languages {
+        code
+        name
+      }
+      emoji
+      isLike @client
     }
   }
 `;

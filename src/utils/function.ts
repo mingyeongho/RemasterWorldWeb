@@ -1,3 +1,6 @@
+import { GET_ALL_COUNTRIES } from "@/gql/GET_ALL_COUNTRIES";
+import { GET_COUNTRIES_BY_CONTINENT } from "@/gql/GET_COUNTRIES_BY_CONTINENT";
+import { ParsedUrlQuery } from "querystring";
 import React from "react";
 import { ContinentPalette, Palette } from "../styles/Palette";
 
@@ -110,4 +113,22 @@ export const onAddLikeCountries = (e: React.MouseEvent, code: string) => {
   const newLikeCountries = JSON.stringify(parseGetLikeCountries.concat(code));
 
   localStorage.setItem("likeCountries", newLikeCountries);
+};
+
+export const getQuery = (query: ParsedUrlQuery) => {
+  if (!query) return GET_ALL_COUNTRIES;
+
+  return GET_COUNTRIES_BY_CONTINENT;
+};
+
+export const getQueryOption = (query: ParsedUrlQuery) => {
+  if (!query) return;
+
+  return {
+    variables: {
+      continent: {
+        eq: query.continent,
+      },
+    },
+  };
 };
