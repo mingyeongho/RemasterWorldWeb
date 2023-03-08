@@ -1,7 +1,4 @@
-import { GET_ALL_COUNTRIES } from "@/gql/GET_ALL_COUNTRIES";
-import { GET_COUNTRIES_BY_CONTINENT } from "@/gql/GET_COUNTRIES_BY_CONTINENT";
 import { getAllSimpleCountries, getCountries } from "@/gql/query";
-import { getQuery, getQueryOption } from "@/utils/function";
 import { SimpleCountryLikeDTO } from "@/utils/interface";
 
 import { useQuery } from "@apollo/client";
@@ -47,8 +44,6 @@ export default function IndexPage() {
   if (!data) {
     return <div>404</div>;
   }
-
-  console.log(data);
 
   return (
     <HomeTemplate

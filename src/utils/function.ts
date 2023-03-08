@@ -99,36 +99,36 @@ export const isFocusTabMenu = ({
   return false;
 };
 
-export const onAddLikeCountries = (e: React.MouseEvent, code: string) => {
+export const onToggleLikeCountries = (
+  e: React.MouseEvent,
+  code: string,
+  isLike: boolean
+) => {
   e.preventDefault();
 
   const getLikeCountries = localStorage.getItem("likeCountries");
 
-  if (!getLikeCountries) {
-    localStorage.setItem("likeCountries", JSON.stringify([code]));
-    return;
+  if (isLike) {
+    // delete
+    if (!getLikeCountries) return;
+
+    const parseGetLikeCountries: string[] = JSON.parse(getLikeCountries);
+    const newLikeCountries = JSON.stringify(
+      parseGetLikeCountries.filter((v) => v !== code)
+    );
+
+    localStorage.setItem("likeCountries", newLikeCountries);
+  } else {
+    // add
+
+    if (!getLikeCountries) {
+      localStorage.setItem("likeCountries", JSON.stringify([code]));
+      return;
+    }
+
+    const parseGetLikeCountries: string[] = JSON.parse(getLikeCountries);
+    const newLikeCountries = JSON.stringify(parseGetLikeCountries.concat(code));
+
+    localStorage.setItem("likeCountries", newLikeCountries);
   }
-
-  const parseGetLikeCountries: string[] = JSON.parse(getLikeCountries);
-  const newLikeCountries = JSON.stringify(parseGetLikeCountries.concat(code));
-
-  localStorage.setItem("likeCountries", newLikeCountries);
-};
-
-export const getQuery = (query: ParsedUrlQuery) => {
-  if (!query) return GET_ALL_COUNTRIES;
-
-  return GET_COUNTRIES_BY_CONTINENT;
-};
-
-export const getQueryOption = (query: ParsedUrlQuery) => {
-  if (!query) return;
-
-  return {
-    variables: {
-      continent: {
-        eq: query.continent,
-      },
-    },
-  };
 };
